@@ -2,8 +2,9 @@ package my.project.roomlearning.presentation.fragments.listFragment
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import my.project.roomlearning.data.User
+import my.project.roomlearning.data.model.User
 import my.project.roomlearning.databinding.CustomRowBinding
 
 class ListAdapter : RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
@@ -18,6 +19,13 @@ class ListAdapter : RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
             binding.firstNameTxt.text = user.firstName
             binding.lastNameTxt.text = user.lastName
             binding.ageTxt.text = user.age.toString()
+
+            binding.rowLayout.setOnClickListener {
+                val action = ListFragmentDirections.actionListFragmentToUpdateFragment(user)
+                binding.rowLayout.findNavController().navigate(action)
+
+
+            }
         }
     }
 

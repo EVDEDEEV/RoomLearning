@@ -1,4 +1,4 @@
-package my.project.roomlearning.data
+package my.project.roomlearning.presentation.viewModel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
@@ -6,6 +6,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import my.project.roomlearning.data.dataBase.UserDatabase
+import my.project.roomlearning.data.model.User
+import my.project.roomlearning.data.repository.UserRepository
 
 class UserViewModel(application: Application) : AndroidViewModel(application) {
 
@@ -22,5 +25,12 @@ class UserViewModel(application: Application) : AndroidViewModel(application) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.addUser(user)
         }
+    }
+
+    fun updateUser(user: User) {
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.updateUser(user)
+        }
+
     }
 }

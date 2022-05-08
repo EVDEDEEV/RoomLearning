@@ -9,8 +9,8 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import my.project.roomlearning.R
-import my.project.roomlearning.data.UserViewModel
 import my.project.roomlearning.databinding.FragmentListBinding
+import my.project.roomlearning.presentation.viewModel.UserViewModel
 
 class ListFragment : Fragment() {
 

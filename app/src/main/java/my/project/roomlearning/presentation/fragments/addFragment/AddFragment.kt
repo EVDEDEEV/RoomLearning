@@ -11,9 +11,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import my.project.roomlearning.R
-import my.project.roomlearning.data.User
-import my.project.roomlearning.data.UserViewModel
+import my.project.roomlearning.data.model.User
 import my.project.roomlearning.databinding.FragmentAddBinding
+import my.project.roomlearning.presentation.viewModel.UserViewModel
 
 
 class AddFragment : Fragment() {
