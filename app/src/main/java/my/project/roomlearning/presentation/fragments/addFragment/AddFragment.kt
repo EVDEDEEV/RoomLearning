@@ -25,7 +25,7 @@ class AddFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         _binding = FragmentAddBinding.inflate(inflater, container, false)
 
@@ -38,7 +38,7 @@ class AddFragment : Fragment() {
 
     private fun insertDataToDatabase() {
         val firstName = binding.addFirstNameEt.text.toString()
-        val lastName = binding.addFirstNameEt.text.toString()
+        val lastName = binding.addLastNameEt.text.toString()
         val age = binding.editTextNumber.text
 
         if (inputCheck(firstName, lastName, age)) {
